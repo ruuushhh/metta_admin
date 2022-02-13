@@ -2,18 +2,36 @@
   "name": "metta_admin",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8080",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check-format": "prettier --check src/.",
+    "check-lint": "eslint . --ext js --ext jsx"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.4.1",
+    "@mui/material": "^5.4.1",
+    "@reduxjs/toolkit": "^1.7.2",
+    "axios": "^0.25.0",
     "next": "12.0.10",
+    "prettier": "^2.5.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.6"
   },
   "devDependencies": {
     "eslint": "8.9.0",
-    "eslint-config-next": "12.0.10"
+    "eslint-config-next": "12.0.10",
+    "eslint-config-prettier": "^8.3.0",
+    "lint-staged": "^12.3.3"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,md}": [
+      "prettier --write src/.",
+      "eslint --fix src/."
+    ]
   }
 }
