@@ -1,12 +1,12 @@
-import {
-  Grid,
-  Typography } from "@mui/material"
+import React from "react"
+import Layout from "../layouts"
 
 
-export default function Home() {
+const Home = props => {
   return (
-    <Grid>
-      <Typography>Home page</Typography>
-    </Grid>
+    <Layout>
+      React Components
+    </Layout>
   )
 }
+export default Home
